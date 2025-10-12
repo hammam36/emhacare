@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emhacare - Layanan Kesehatan Holistik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script>
+        // Konfigurasi warna kustom sesuai logo
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'emhacare-blue': '#00AEEF',
+                'emhacare-blue-dark': '#0095c7',
+                'emhacare-green': '#8DC63F',
+                'emhacare-green-light': '#f0f9e8',
+                'emhacare-green-dark': '#79ab39',
+              }
+            }
+          }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .hero-slide {
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-slide-1 {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhY-z3V_v4F-Xp-i-tI8nL4T5vj_tQ9pP1j_x4r-vX_z7e-fX_g-Y9a-hX_j-dC_aA_v-eS_z-iG_kY9_cE_y_e_rA_x_g_l_kY_j-e_rI_g-Y9a-hX_j-dC_aA_v-eS_z-iG_kY9_cE_y_e_rA_x_g_l_kY_j-e_rI/s1600/emhacare.jpg');
+        }
+        .hero-slide-2 {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1920x1008/334155/FFFFFF?text=Tentang+Kami');
+        }
+        .hero-slide-3 {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1920x1080/059669/FFFFFF?text=Produk+Herbal');
+        }
+        .card-hover-effect {
+            transition: all 0.3s ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        /* Memberikan efek tap pada mobile */
+        .card-hover-effect:active {
+            transform: scale(0.97);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        /* Animasi untuk testimoni */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .testimonial-fade-in {
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+        /* Animasi untuk menu mobile */
+        #mobile-menu {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.4s ease-in-out;
+        }
+        #mobile-menu.open {
+            max-height: 500px; /* Cukup besar untuk menampung menu */
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-emhacare-blue">
+                <div>
+                    <img src="logo.png" alt="logo emhacare" class="h-8 inline-block mr-2">
+                </div>
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#beranda" class="text-gray-600 hover:text-emhacare-blue">Beranda</a>
+                <a href="#layanan" class="text-gray-600 hover:text-emhacare-blue">Layanan</a>
+                <a href="toko.html" class="text-gray-600 hover:text-emhacare-blue">Toko</a>
+                <a href="#artikel" class="text-gray-600 hover:text-emhacare-blue">Artikel</a>
+                <a href="#galeri" class="text-gray-600 hover:text-emhacare-blue">Galeri</a>
+                <a href="#peluang-usaha" class="text-gray-600 hover:text-emhacare-blue">Kemitraan</a>
+            </div>
+            <a href="https://wa.me/6281328213737" target="_blank" class="hidden md:flex items-center bg-emhacare-blue text-white px-5 py-2 rounded-full hover:bg-emhacare-blue-dark transition duration-300"><i class="fab fa-whatsapp mr-2"></i>Buat Janji</a>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="px-6 pb-4">
+            <a href="#beranda" class="block py-2 text-gray-600 hover:text-emhacare-blue">Beranda</a>
+            <a href="#layanan" class="block py-2 text-gray-600 hover:text-emhacare-blue">Layanan</a>
+            <a href="toko.html" class="block py-2 text-gray-600 hover:text-emhacare-blue">Toko</a>
+            <a href="#artikel" class="block py-2 text-gray-600 hover:text-emhacare-blue">Artikel</a>
+            <a href="#galeri" class="block py-2 text-gray-600 hover:text-emhacare-blue">Galeri</a>
+            <a href="#peluang-usaha" class="block py-2 text-gray-600 hover:text-emhacare-blue">Kemitraan</a>
+            <a href="https://wa.me/6281328213737" target="_blank" class="flex items-center justify-center bg-emhacare-blue text-white text-center mt-2 px-5 py-2 rounded-full hover:bg-emhacare-blue-dark transition duration-300"><i class="fab fa-whatsapp mr-2"></i>Buat Janji</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="beranda" class="relative overflow-hidden">
+            <div id="hero-slider-track" class="flex">
+                <!-- Slide 1 -->
+                <div class="w-full flex-shrink-0 hero-slide hero-slide-1 text-white py-24 md:py-32">
+                    <div class="container mx-auto px-6 text-center">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4">Kesehatan Holistik untuk Anda dan Keluarga</h1>
+                        <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">Kami menyediakan layanan medis profesional yang dipadukan dengan perawatan holistik.</p>
+                        <div class="space-x-0 md:space-x-4 space-y-4 md:space-y-0">
+                            <a href="#layanan" class="inline-block bg-emhacare-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-emhacare-blue-dark transition duration-300">Temukan Layanan Kami</a>
+                            <a href="#produk" class="inline-block bg-white text-emhacare-blue px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300">Belanja Produk Kesehatan</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="w-full flex-shrink-0 hero-slide hero-slide-2 text-white py-24 md:py-32">
+                    <div class="container mx-auto px-6 text-center">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4">Tentang Kami</h1>
+                        <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">Kenali lebih dekat bagaimana Emhacare berkomitmen memberikan pelayanan kesehatan holistik terbaik untuk Anda dan keluarga.</p>
+                        <div class="space-x-0 md:space-x-4 space-y-4 md:space-y-0">
+                            <a href="https://www.youtube.com/" target="_blank" class="inline-block bg-red-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-red-700 transition duration-300"><i class="fab fa-youtube mr-2"></i>Lihat Video</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="w-full flex-shrink-0 hero-slide hero-slide-3 text-white py-24 md:py-32">
+                    <div class="container mx-auto px-6 text-center">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4">Solusi Sehat dari Alam</h1>
+                        <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">Temukan berbagai produk herbal pilihan dan berkualitas untuk menjaga imunitas serta vitalitas tubuh Anda secara alami.</p>
+                        <div class="space-x-0 md:space-x-4 space-y-4 md:space-y-0">
+                            <a href="#produk" class="inline-block bg-emhacare-green text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-emhacare-green-dark transition duration-300">Lihat Produk Herbal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation Buttons -->
+            <button id="prev-hero-slide" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white w-12 h-12 rounded-full flex items-center justify-center transition focus:outline-none z-10">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="next-hero-slide" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white w-12 h-12 rounded-full flex items-center justify-center transition focus:outline-none z-10">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <!-- Dots -->
+            <div id="hero-slider-dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+                <!-- Dots will be generated by JS -->
+            </div>
+        </section>
+        
+        <!-- Mengapa Memilih Kami Section -->
+        <section id="mengapa-kami" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Mengapa Memilih Emhacare?</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Komitmen kami adalah memberikan pelayanan terbaik bagi kesehatan Anda secara menyeluruh.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect">
+                        <div class="text-gray-700 mb-4"><i class="fas fa-heart-pulse fa-3x"></i></div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Pendekatan Holistik</h3>
+                        <p class="text-gray-600">Kami melayani kesehatan secara menyeluruh dari aspek fisik maupun psikis untuk hasil yang optimal.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect">
+                        <div class="text-gray-700 mb-4"><i class="fas fa-users fa-3x"></i></div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Pelayanan Kekeluargaan</h3>
+                        <p class="text-gray-600">Setiap pasien kami layani secara profesional namun tetap mengedepankan suasana yang hangat dan kekeluargaan.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect">
+                        <div class="text-gray-700 mb-4"><i class="fas fa-globe-asia fa-3x"></i></div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Jangkauan Luas</h3>
+                        <p class="text-gray-600">Pasien kami tidak hanya dari lokal, namun meluas hingga lintas kota dan provinsi di seluruh Indonesia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layanan Unggulan Section -->
+        <section id="layanan" class="py-16 md:py-24 bg-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Layanan Kesehatan Emhacare</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Solusi lengkap untuk berbagai kebutuhan kesehatan Anda dan keluarga.</p>
+                </div>
+                <!-- Container baru untuk layout mobile -->
+                <div class="space-y-4 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8">
+                    <!-- Item Layanan (Struktur Baru) -->
+                    <div class="bg-white rounded-lg p-4 flex items-center card-hover-effect">
+                        <div class="text-emhacare-green text-2xl mr-4 flex-shrink-0 w-12 text-center"><i class="fas fa-user-doctor"></i></div>
+                        <div class="text-left">
+                            <h3 class="text-lg font-semibold text-gray-800">Praktik Dokter</h3>
+                            <p class="text-gray-600 text-sm hidden sm:block">Pemeriksaan profesional dan holistik.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 flex items-center card-hover-effect">
+                        <div class="text-emhacare-green text-2xl mr-4 flex-shrink-0 w-12 text-center"><i class="fas fa-baby"></i></div>
+                        <div class="text-left">
+                            <h3 class="text-lg font-semibold text-gray-800">USG Kehamilan</h3>
+                            <p class="text-gray-600 text-sm hidden sm:block">Pantau buah hati dengan teknologi modern.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 flex items-center card-hover-effect">
+                        <div class="text-emhacare-green text-2xl mr-4 flex-shrink-0 w-12 text-center"><i class="fas fa-spa"></i></div>
+                        <div class="text-left">
+                            <h3 class="text-lg font-semibold text-gray-800">Emhacare Akuria</h3>
+                            <p class="text-gray-600 text-sm hidden sm:block">Akupunktur untuk kesehatan & kecantikan.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 flex items-center card-hover-effect">
+                        <div class="text-emhacare-green text-2xl mr-4 flex-shrink-0 w-12 text-center"><i class="fas fa-house-medical"></i></div>
+                        <div class="text-left">
+                            <h3 class="text-lg font-semibold text-gray-800">Homecare</h3>
+                            <p class="text-gray-600 text-sm hidden sm:block">Perawatan kesehatan nyaman di rumah Anda.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 flex items-center card-hover-effect">
+                        <div class="text-emhacare-green text-2xl mr-4 flex-shrink-0 w-12 text-center"><i class="fas fa-child"></i></div>
+                        <div class="text-left">
+                            <h3 class="text-lg font-semibold text-gray-800">Rumah Khitan dr. Anton</h3>
+                            <p class="text-gray-600 text-sm hidden sm:block">Layanan khitan modern, aman, dan nyaman.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 flex items-center card-hover-effect">
+                        <div class="text-emhacare-green text-2xl mr-4 flex-shrink-0 w-12 text-center"><i class="fas fa-hand-holding-heart"></i></div>
+                        <div class="text-left">
+                            <h3 class="text-lg font-semibold text-gray-800">Emhacare Peduli</h3>
+                            <p class="text-gray-600 text-sm hidden sm:block">Program sosial dan kemanusiaan kami.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tim Dokter Section -->
+        <section id="tim-dokter" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Tim Dokter Emhacare</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Didukung oleh tim dokter yang berpengalaman dan berdedikasi.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <!-- Dokter 1 -->
+                    <div class="bg-white rounded-lg shadow-lg text-center p-8 w-full max-w-xs card-hover-effect">
+                        <img src="https://placehold.co/150x150/00AEEF/FFFFFF?text=dr.+Anton" alt="dr. Dwi Anton Budhi Cahyono" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-emhacare-blue">
+                        <h3 class="text-xl font-bold text-gray-800">dr. Dwi Anton Budhi Cahyono</h3>
+                        <p class="text-emhacare-blue font-semibold mt-1">Dokter Umum & Khitan</p>
+                        <div class="mt-4 flex justify-center space-x-4 text-gray-500">
+                            <a href="#" class="hover:text-emhacare-blue"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="hover:text-emhacare-blue"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <!-- Dokter 2 -->
+                    <div class="bg-white rounded-lg shadow-lg text-center p-8 w-full max-w-xs card-hover-effect">
+                        <img src="https://placehold.co/150x150/8DC63F/FFFFFF?text=dr.+Dyah" alt="dr. Dyah Andari" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-emhacare-green">
+                        <h3 class="text-xl font-bold text-gray-800">dr. Dyah Andari</h3>
+                        <p class="text-emhacare-green font-semibold mt-1">Dokter Umum & Estetika</p>
+                        <div class="mt-4 flex justify-center space-x-4 text-gray-500">
+                            <a href="#" class="hover:text-emhacare-blue"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="hover:text-emhacare-blue"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promo Slider Section -->
+        <section id="promo" class="py-16 md:py-24 bg-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Promo & Penawaran Spesial</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Jangan lewatkan promo menarik dari Emhacare untuk Anda.</p>
+                </div>
+                <div class="relative rounded-lg shadow-lg overflow-hidden bg-gray-200">
+                    <!-- Slider container -->
+                    <div id="slider-track" class="flex">
+                        <!-- Slide 1 -->
+                        <div class="w-full flex-shrink-0">
+                            <img src="https://placehold.co/1200x400/00AEEF/FFFFFF?text=Promo+Spesial+1" alt="Promo 1" class="w-full h-auto object-cover">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="w-full flex-shrink-0">
+                            <img src="https://placehold.co/1200x400/8DC63F/FFFFFF?text=Promo+Spesial+2" alt="Promo 2" class="w-full h-auto object-cover">
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="w-full flex-shrink-0">
+                            <img src="https://placehold.co/1200x400/334155/FFFFFF?text=Info+Kesehatan" alt="Promo 3" class="w-full h-auto object-cover">
+                        </div>
+                    </div>
+                    <!-- Navigation Buttons -->
+                    <button id="prev-slide" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/50 hover:bg-white text-gray-800 w-12 h-12 rounded-full flex items-center justify-center transition focus:outline-none z-10">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="next-slide" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/50 hover:bg-white text-gray-800 w-12 h-12 rounded-full flex items-center justify-center transition focus:outline-none z-10">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <!-- Dots -->
+                    <div id="slider-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+                        <!-- Dots will be generated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program & Penawaran Section -->
+        <section id="program-penawaran" class="py-16 md:py-24 bg-white overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Program & Penawaran Terkini</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Informasi terbaru seputar program dan penawaran menarik dari kami.</p>
+                </div>
+                <div class="relative">
+                    <!-- Slider Track -->
+                    <div id="program-slider-track" class="flex">
+                        <!-- Slide 1: Program Bulan Ini -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect">
+                                <img src="https://placehold.co/600x350/8DC63F/FFFFFF?text=Pemeriksaan+Gratis" alt="Program Pemeriksaan Gratis" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h4 class="text-xl font-semibold text-gray-800">Program Bulan Ini: Gula Darah Gratis</h4>
+                                    <p class="text-gray-600 mt-2 mb-4">Dalam rangka bulan kesehatan, kami mengadakan program pemeriksaan gula darah gratis bagi 50 pendaftar pertama.</p>
+                                    <a href="#" class="font-semibold text-emhacare-blue hover:text-emhacare-blue-dark">Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Diskon Akupunktur -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect">
+                                <img src="https://placehold.co/600x350/00AEEF/FFFFFF?text=Diskon+Spesial" alt="Diskon Spesial Akupunktur" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h4 class="text-xl font-semibold text-gray-800">Penawaran Spesial: Diskon Akupunktur</h4>
+                                    <p class="text-gray-600 mt-2 mb-4">Dapatkan diskon 15% untuk pengambilan paket 10x sesi terapi akupunktur kecantikan atau kesehatan.</p>
+                                    <a href="#" class="font-semibold text-emhacare-blue hover:text-emhacare-blue-dark">Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3: Paket Bundling -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect">
+                                <img src="https://placehold.co/600x350/334155/FFFFFF?text=Paket+Bundling" alt="Paket Bundling Produk" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h4 class="text-xl font-semibold text-gray-800">Promo Produk: Paket Sehat</h4>
+                                    <p class="text-gray-600 mt-2 mb-4">Beli 2 box Susu Gomilk dan dapatkan gratis 1 botol Propolis. Persediaan sangat terbatas!</p>
+                                    <a href="#" class="font-semibold text-emhacare-blue hover:text-emhacare-blue-dark">Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Navigation Buttons -->
+                    <button id="prev-program-slide" class="absolute top-1/2 -left-2 md:-left-4 transform -translate-y-1/2 bg-white hover:bg-gray-200 text-gray-800 w-12 h-12 rounded-full flex items-center justify-center transition focus:outline-none z-10 shadow-md">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="next-program-slide" class="absolute top-1/2 -right-2 md:-right-4 transform -translate-y-1/2 bg-white hover:bg-gray-200 text-gray-800 w-12 h-12 rounded-full flex items-center justify-center transition focus:outline-none z-10 shadow-md">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <!-- Dots -->
+                <div id="program-slider-dots" class="mt-8 flex justify-center space-x-2 z-10">
+                    <!-- Dots will be generated by JS -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Produk Terlaris Section -->
+        <section id="produk" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Emhacare Shop</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Jaga kesehatan Anda dengan produk-produk pilihan berkualitas dan terpercaya.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Product Card 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect">
+                        <img src="https://placehold.co/400x300/e2e8f0/333333?text=Susu+Gomilk" alt="Susu Gomilk" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Susu Kambing Gomilk</h3>
+                            <p class="text-gray-600 mt-2">Nutrisi alami untuk menjaga daya tahan tubuh dan kesehatan pencernaan.</p>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-lg font-bold text-emhacare-blue">Rp 30.000</span>
+                                <button class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect">
+                        <img src="https://placehold.co/400x300/e2e8f0/333333?text=Ayyuna+Skincare" alt="Ayyuna Skincare" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Ayyuna Skincare</h3>
+                            <p class="text-gray-600 mt-2">Perawatan kulit wajah alami untuk kulit cerah, sehat, dan bercahaya.</p>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-lg font-bold text-emhacare-blue">Rp 125.000</span>
+                                <button class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect">
+                        <img src="https://placehold.co/400x300/e2e8f0/333333?text=Buku+Tadabbur" alt="Buku Kreatif Tadabbur Al Qur'an" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Buku Tadabbur Qur'an</h3>
+                            <p class="text-gray-600 mt-2">Buku kreatif untuk membantu anak-anak dan keluarga lebih dekat dengan Al-Qur'an.</p>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-lg font-bold text-emhacare-blue">Rp 99.000</span>
+                                <button class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect">
+                        <img src="https://placehold.co/400x300/e2e8f0/333333?text=Propolis" alt="Propolis" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Propolis SM</h3>
+                            <p class="text-gray-600 mt-2">Ekstrak propolis Brazil murni untuk menjaga imunitas dan kesehatan tubuh.</p>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-lg font-bold text-emhacare-blue">Rp 85.000</span>
+                                <button class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 5 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect">
+                        <img src="https://placehold.co/400x300/e2e8f0/333333?text=Oriflakes" alt="Oriflakes" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Oriflakes Sereal</h3>
+                            <p class="text-gray-600 mt-2">Sereal umbi garut, solusi sehat dan praktis untuk masalah lambung.</p>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-lg font-bold text-emhacare-blue">Rp 65.000</span>
+                                <button class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 6 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect">
+                        <img src="https://placehold.co/400x300/e2e8f0/333333?text=Celana+Hernia" alt="Terapi Celana Hernia" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Terapi Celana Hernia</h3>
+                            <p class="text-gray-600 mt-2">Solusi terapi hernia yang nyaman, praktis, dan efektif tanpa operasi.</p>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-lg font-bold text-emhacare-blue">Rp 150.000</span>
+                                <button class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#" class="inline-block bg-emhacare-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-emhacare-blue-dark transition duration-300">Lihat Semua Produk</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artikel Section -->
+        <section id="artikel" class="py-16 md:py-24 bg-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Baca Artikel Kesehatan Terbaru</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Dapatkan informasi dan tips bermanfaat seputar kesehatan dari tim kami.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Artikel Card 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect">
+                        <img src="https://placehold.co/400x250/8DC63F/FFFFFF?text=Manfaat+Herbal" alt="Artikel 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm font-semibold text-emhacare-blue bg-blue-100 py-1 px-3 rounded-full">Herbal</span>
+                            <h3 class="text-xl font-semibold text-gray-800 mt-4 mb-2">5 Manfaat Susu Kambing Etawa untuk Imunitas</h3>
+                            <p class="text-gray-600 text-sm">Susu kambing etawa dikenal kaya akan nutrisi yang dapat membantu menjaga dan meningkatkan daya tahan tubuh...</p>
+                            <a href="#" class="font-semibold text-emhacare-blue hover:text-emhacare-blue-dark mt-4 inline-block">Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <!-- Artikel Card 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect">
+                        <img src="https://placehold.co/400x250/00AEEF/FFFFFF?text=Gaya+Hidup+Sehat" alt="Artikel 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm font-semibold text-emhacare-green bg-green-100 py-1 px-3 rounded-full">Gaya Hidup</span>
+                            <h3 class="text-xl font-semibold text-gray-800 mt-4 mb-2">Tips Sederhana Mencegah Nyeri Punggung</h3>
+                            <p class="text-gray-600 text-sm">Nyeri punggung seringkali mengganggu aktivitas. Ketahui beberapa cara mudah untuk mencegahnya...</p>
+                            <a href="#" class="font-semibold text-emhacare-blue hover:text-emhacare-blue-dark mt-4 inline-block">Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <!-- Artikel Card 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect">
+                        <img src="https://placehold.co/400x250/334155/FFFFFF?text=Info+Penyakit" alt="Artikel 3" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm font-semibold text-red-500 bg-red-100 py-1 px-3 rounded-full">Info Penyakit</span>
+                            <h3 class="text-xl font-semibold text-gray-800 mt-4 mb-2">Mengenal Gejala Awal Penyakit Hernia</h3>
+                            <p class="text-gray-600 text-sm">Hernia atau turun berok dapat terjadi pada siapa saja. Kenali gejala awalnya agar dapat ditangani lebih dini...</p>
+                            <a href="#" class="font-semibold text-emhacare-blue hover:text-emhacare-blue-dark mt-4 inline-block">Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#" class="inline-block bg-emhacare-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-emhacare-blue-dark transition duration-300">Lihat Semua Artikel</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Galeri Section -->
+        <section id="galeri" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Galeri Emhacare</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Lihat lebih dekat fasilitas dan kegiatan kami.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://placehold.co/600x400/e2e8f0/333333?text=Fasilitas+Klinik" alt="Galeri 1" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"></div>
+                    <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://placehold.co/600x400/e2e8f0/333333?text=Ruang+Tunggu" alt="Galeri 2" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"></div>
+                    <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://placehold.co/600x400/e2e8f0/333333?text=Kegiatan+Peduli" alt="Galeri 3" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"></div>
+                    <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://placehold.co/600x400/e2e8f0/333333?text=Produk+Unggulan" alt="Galeri 4" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"></div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#" class="inline-block bg-emhacare-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-emhacare-blue-dark transition duration-300">Lihat Galeri Lengkap</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimoni" class="py-16 md:py-24 bg-blue-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12">Apa Kata Mereka?</h2>
+                <div id="testimonial-container" class="max-w-3xl mx-auto testimonial-fade-in">
+                    <!-- Testimonial content will be injected here by JS -->
+                </div>
+                <div class="mt-8">
+                    <button id="prev-testimonial" class="bg-white text-gray-700 w-10 h-10 rounded-full mx-2 hover:bg-gray-200 transition duration-300 shadow"><i class="fas fa-chevron-left"></i></button>
+                    <button id="next-testimonial" class="bg-white text-gray-700 w-10 h-10 rounded-full mx-2 hover:bg-gray-200 transition duration-300 shadow"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Peluang Usaha Section -->
+        <section id="peluang-usaha" class="py-16 md:py-24 bg-gray-800 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold">Tumbuh dan Sejahtera Bersama Emhacare</h2>
+                <p class="text-lg mt-4 mb-8 max-w-3xl mx-auto">Jadilah bagian dari keluarga kami. Dapatkan penghasilan tambahan dengan menjadi reseller, agen, atau distributor produk-produk berkualitas dari Emhacare.</p>
+                <a href="#" class="bg-emhacare-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-emhacare-blue-dark transition duration-300 shadow-lg">Gabung Kemitraan</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="kontak" class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">emha<span class="text-emhacare-green">care</span></h3>
+                    <p class="mb-4">Menjadi mitra terpercaya dalam perjalanan kesehatan holistik Anda dan keluarga.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Tautan Cepat</h3>
+                    <ul>
+                        <li class="mb-2"><a href="#layanan" class="hover:text-white">Layanan Kami</a></li>
+                        <li class="mb-2"><a href="#produk" class="hover:text-white">Emhacare Shop</a></li>
+                        <li class="mb-2"><a href="#peluang-usaha" class="hover:text-white">Kemitraan</a></li>
+                        <li class="mb-2"><a href="#testimoni" class="hover:text-white">Testimoni</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Hubungi Kami</h3>
+                    <p class="mb-2 flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3"></i>Jl Gabugan-Gemolong km 02, Ketro, Tanon, Sragen, Jawa Tengah</p>
+                    <p class="mb-2 flex items-center"><i class="fas fa-phone mr-3"></i>+62 813-2821-3737</p>
+                    <p class="mb-2 flex items-center"><i class="fas fa-envelope mr-3"></i>emhacare@gmail.com</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Jam Operasional</h3>
+                    <p class="mb-1"><span class="font-semibold">Senin - Ahad:</span></p>
+                    <p class="mb-1 ml-2">Pagi: 06.00 - 10.00 WIB</p>
+                    <p class="ml-2">Sore: 16.00 - 18.00 WIB</p>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500">
+                <p>&copy; <span id="year"></span> Emhacare. Semua Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('open');
+        });
+
+        // Testimonial Slider
+        const testimonials = [
+            {
+                quote: "Pelayanan di Emhacare sangat ramah dan profesional. Saya merasa sangat terbantu dengan terapi akupunktur untuk masalah nyeri punggung saya. Sangat direkomendasikan!",
+                name: "Anisa Putri",
+                location: "Surakarta",
+                image: "https://placehold.co/100x100/a0aec0/ffffff?text=AP"
+            },
+            {
+                quote: "Susu Gomilk benar-benar membantu meningkatkan daya tahan tubuh anak saya. Rasanya enak dan anak saya suka. Pengiriman juga cepat dan aman.",
+                name: "Budi Santoso",
+                location: "Sragen",
+                image: "https://placehold.co/100x100/a0aec0/ffffff?text=BS"
+            },
+            {
+                quote: "Dokter di Emhacare sangat sabar dan penjelasannya mudah dimengerti. Saya merasa nyaman berkonsultasi di sini. Tempatnya juga bersih dan nyaman.",
+                name: "Citra Lestari",
+                location: "Karanganyar",
+                image: "https://placehold.co/100x100/a0aec0/ffffff?text=CL"
+            }
+        ];
+
+        let currentTestimonialIndex = 0;
+        const testimonialContainer = document.getElementById('testimonial-container');
+        const prevTestimonialButton = document.getElementById('prev-testimonial');
+        const nextTestimonialButton = document.getElementById('next-testimonial');
+
+        function displayTestimonial(index) {
+            const testimonial = testimonials[index];
+            testimonialContainer.innerHTML = `
+                <div class="testimonial-fade-in">
+                    <img src="${testimonial.image}" alt="Foto ${testimonial.name}" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-emhacare-green">
+                    <p class="text-lg italic text-gray-600">"${testimonial.quote}"</p>
+                    <div class="mt-4">
+                        <p class="font-bold text-gray-800 text-xl">${testimonial.name}</p>
+                        <p class="text-gray-500">${testimonial.location}</p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        if(testimonialContainer) {
+            prevTestimonialButton.addEventListener('click', () => {
+                currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
+                displayTestimonial(currentTestimonialIndex);
+            });
+
+            nextTestimonialButton.addEventListener('click', () => {
+                currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+                displayTestimonial(currentTestimonialIndex);
+            });
+            
+            // Auto-cycle testimonials
+            setInterval(() => {
+                nextTestimonialButton.click();
+            }, 6000);
+
+            // Initial display
+            displayTestimonial(currentTestimonialIndex);
+        }
+        
+        // General Slider Function
+        function setupSlider(sliderId, prevButtonId, nextButtonId, dotsId, config = {}) {
+            const sliderTrack = document.getElementById(sliderId);
+            if (!sliderTrack) return;
+
+            const prevButton = document.getElementById(prevButtonId);
+            const nextButton = document.getElementById(nextButtonId);
+            const dotsContainer = document.getElementById(dotsId);
+
+            let slides = Array.from(sliderTrack.children);
+            const originalSlideCount = slides.length;
+            if (originalSlideCount <= 1) {
+                if(prevButton) prevButton.style.display = 'none';
+                if(nextButton) nextButton.style.display = 'none';
+                return;
+            };
+
+            let currentIndex = 0; // Logical index: 0 to originalSlideCount - 1
+            let isTransitioning = false;
+            
+            const transitionDuration = config.duration || 700;
+            const autoSlideDelay = config.delay || 10000;
+            const fullTransitionStyle = `transform ${transitionDuration / 1000}s ease-in-out`;
+
+            // 1. Clone first and last slides for seamless loop
+            const firstClone = slides[0].cloneNode(true);
+            const lastClone = slides[originalSlideCount - 1].cloneNode(true);
+            sliderTrack.appendChild(firstClone);
+            sliderTrack.insertBefore(lastClone, slides[0]);
+            
+            // Update slides array after cloning
+            slides = Array.from(sliderTrack.children);
+            
+            // 2. Initial setup
+            sliderTrack.style.transform = `translateX(-100%)`; // Start at the first real slide
+
+            // 3. Create dots
+            if (dotsContainer) {
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < originalSlideCount; i++) {
+                    const dot = document.createElement('button');
+                    if (dotsId === 'program-slider-dots') {
+                        dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-gray-300', 'hover:bg-gray-400', 'transition');
+                    } else {
+                        dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-white/50', 'hover:bg-white', 'transition');
+                    }
+                    dot.addEventListener('click', () => {
+                        if (isTransitioning) return;
+                        currentIndex = i;
+                        moveToSlide();
+                        resetAutoSlide();
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+            }
+            const dots = dotsContainer ? Array.from(dotsContainer.children) : [];
+
+            const updateDots = () => {
+                if (!dotsContainer) return;
+                dots.forEach((dot, i) => {
+                    const isActive = (i === currentIndex);
+                    if (dotsId === 'program-slider-dots') {
+                        dot.classList.toggle('bg-emhacare-blue', isActive);
+                        dot.classList.toggle('bg-gray-300', !isActive);
+                    } else {
+                        dot.classList.toggle('bg-white', isActive);
+                        dot.classList.toggle('bg-white/50', !isActive);
+                    }
+                });
+            };
+            
+            const moveToSlide = () => {
+                sliderTrack.style.transition = fullTransitionStyle;
+                sliderTrack.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`;
+                updateDots();
+            };
+
+            sliderTrack.addEventListener('transitionend', () => {
+                isTransitioning = false;
+                if (currentIndex >= originalSlideCount) {
+                    sliderTrack.style.transition = 'none';
+                    currentIndex = 0;
+                    sliderTrack.style.transform = `translateX(-100%)`;
+                }
+                if (currentIndex < 0) {
+                    sliderTrack.style.transition = 'none';
+                    currentIndex = originalSlideCount - 1;
+                    sliderTrack.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`;
+                }
+            });
+
+            const next = () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIndex++;
+                moveToSlide();
+            };
+
+            const prev = () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIndex--;
+                moveToSlide();
+            };
+
+            let autoSlideInterval = setInterval(next, autoSlideDelay);
+            const resetAutoSlide = () => {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(next, autoSlideDelay);
+            };
+
+            nextButton.addEventListener('click', () => {
+                next();
+                resetAutoSlide();
+            });
+
+            prevButton.addEventListener('click', () => {
+                prev();
+                resetAutoSlide();
+            });
+
+            // Initial call
+            updateDots();
+        }
+
+        // Initialize Sliders
+        setupSlider('hero-slider-track', 'prev-hero-slide', 'next-hero-slide', 'hero-slider-dots', { duration: 700 });
+        setupSlider('slider-track', 'prev-slide', 'next-slide', 'slider-dots', { duration: 500 });
+        setupSlider('program-slider-track', 'prev-program-slide', 'next-program-slide', 'program-slider-dots', { duration: 500 });
+
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
