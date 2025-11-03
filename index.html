@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <script>
-        // Konfigurasi warna kustom sesuai logo
+        // Konfigurasi warna kustom sesuai logo (Wajib ada di file utama)
         tailwind.config = {
           theme: {
             extend: {
@@ -66,53 +66,30 @@
         .testimonial-fade-in {
             animation: fadeIn 0.8s ease-in-out forwards;
         }
-        /* Animasi untuk menu mobile */
+        /* Gaya CSS untuk mobile menu dari header.component.html */
         #mobile-menu {
             max-height: 0;
             opacity: 0;
             overflow: hidden;
             transition: all 0.4s ease-in-out;
+            background-color: white; /* Pastikan ada background saat dibuka di mobile */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
         #mobile-menu.open {
-            max-height: 500px; /* Cukup besar untuk menampung menu */
+            max-height: 500px; 
             opacity: 1;
+        }
+        @media (min-width: 768px) {
+            #mobile-menu {
+                display: none !important;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-emhacare-blue">
-                <div>
-                    <img src="logo.png" alt="logo emhacare" class="h-8 inline-block mr-2">
-                </div>
-            </a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="#beranda" class="text-gray-600 hover:text-emhacare-blue">Beranda</a>
-                <a href="#layanan" class="text-gray-600 hover:text-emhacare-blue">Layanan</a>
-                <a href="toko.html" class="text-gray-600 hover:text-emhacare-blue">Toko</a>
-                <a href="#artikel" class="text-gray-600 hover:text-emhacare-blue">Artikel</a>
-                <a href="#galeri" class="text-gray-600 hover:text-emhacare-blue">Galeri</a>
-                <a href="#peluang-usaha" class="text-gray-600 hover:text-emhacare-blue">Kemitraan</a>
-            </div>
-            <a href="https://wa.me/6281328213737" target="_blank" class="hidden md:flex items-center bg-emhacare-blue text-white px-5 py-2 rounded-full hover:bg-emhacare-blue-dark transition duration-300"><i class="fab fa-whatsapp mr-2"></i>Buat Janji</a>
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="px-6 pb-4">
-            <a href="#beranda" class="block py-2 text-gray-600 hover:text-emhacare-blue">Beranda</a>
-            <a href="#layanan" class="block py-2 text-gray-600 hover:text-emhacare-blue">Layanan</a>
-            <a href="toko.html" class="block py-2 text-gray-600 hover:text-emhacare-blue">Toko</a>
-            <a href="#artikel" class="block py-2 text-gray-600 hover:text-emhacare-blue">Artikel</a>
-            <a href="#galeri" class="block py-2 text-gray-600 hover:text-emhacare-blue">Galeri</a>
-            <a href="#peluang-usaha" class="block py-2 text-gray-600 hover:text-emhacare-blue">Kemitraan</a>
-            <a href="https://wa.me/6281328213737" target="_blank" class="flex items-center justify-center bg-emhacare-blue text-white text-center mt-2 px-5 py-2 rounded-full hover:bg-emhacare-blue-dark transition duration-300"><i class="fab fa-whatsapp mr-2"></i>Buat Janji</a>
-        </div>
-    </header>
+    <!-- Placeholder Header/Navbar Utama (AKAN DIISI OLEH JAVASCRIPT) -->
+    <div id="main-header-placeholder"></div>
 
     <main>
         <!-- Hero Section -->
@@ -394,7 +371,7 @@
                             <p class="text-gray-600 mt-2">Nutrisi alami untuk menjaga daya tahan tubuh dan kesehatan pencernaan.</p>
                             <div class="mt-4 flex justify-between items-center">
                                 <span class="text-lg font-bold text-emhacare-blue">Rp 30.000</span>
-                                <button class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
+                                <button onclick="window.location.href='toko.html'" class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
                             </div>
                         </div>
                     </div>
@@ -406,7 +383,7 @@
                             <p class="text-gray-600 mt-2">Perawatan kulit wajah alami untuk kulit cerah, sehat, dan bercahaya.</p>
                             <div class="mt-4 flex justify-between items-center">
                                 <span class="text-lg font-bold text-emhacare-blue">Rp 125.000</span>
-                                <button class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
+                                <button onclick="window.location.href='toko.html'" class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
                             </div>
                         </div>
                     </div>
@@ -418,7 +395,7 @@
                             <p class="text-gray-600 mt-2">Buku kreatif untuk membantu anak-anak dan keluarga lebih dekat dengan Al-Qur'an.</p>
                             <div class="mt-4 flex justify-between items-center">
                                 <span class="text-lg font-bold text-emhacare-blue">Rp 99.000</span>
-                                <button class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
+                                <button onclick="window.location.href='toko.html'" class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
                             </div>
                         </div>
                     </div>
@@ -430,7 +407,7 @@
                             <p class="text-gray-600 mt-2">Ekstrak propolis Brazil murni untuk menjaga imunitas dan kesehatan tubuh.</p>
                             <div class="mt-4 flex justify-between items-center">
                                 <span class="text-lg font-bold text-emhacare-blue">Rp 85.000</span>
-                                <button class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
+                                <button onclick="window.location.href='toko.html'" class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
                             </div>
                         </div>
                     </div>
@@ -442,7 +419,7 @@
                             <p class="text-gray-600 mt-2">Sereal umbi garut, solusi sehat dan praktis untuk masalah lambung.</p>
                             <div class="mt-4 flex justify-between items-center">
                                 <span class="text-lg font-bold text-emhacare-blue">Rp 65.000</span>
-                                <button class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
+                                <button onclick="window.location.href='toko.html'" class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
                             </div>
                         </div>
                     </div>
@@ -454,13 +431,13 @@
                             <p class="text-gray-600 mt-2">Solusi terapi hernia yang nyaman, praktis, dan efektif tanpa operasi.</p>
                             <div class="mt-4 flex justify-between items-center">
                                 <span class="text-lg font-bold text-emhacare-blue">Rp 150.000</span>
-                                <button class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
+                                <button onclick="window.location.href='toko.html'" class="bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition duration-300"><i class="fas fa-cart-plus mr-2"></i>Beli</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="text-center mt-12">
-                    <a href="#" class="inline-block bg-emhacare-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-emhacare-blue-dark transition duration-300">Lihat Semua Produk</a>
+                    <a href="toko.html" class="inline-block bg-emhacare-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-emhacare-blue-dark transition duration-300">Lihat Semua Produk</a>
                 </div>
             </div>
         </section>
@@ -571,7 +548,7 @@
                     <h3 class="text-xl font-bold text-white mb-4">Tautan Cepat</h3>
                     <ul>
                         <li class="mb-2"><a href="#layanan" class="hover:text-white">Layanan Kami</a></li>
-                        <li class="mb-2"><a href="#produk" class="hover:text-white">Emhacare Shop</a></li>
+                        <li class="mb-2"><a href="toko.html" class="hover:text-white">Emhacare Shop</a></li>
                         <li class="mb-2"><a href="#peluang-usaha" class="hover:text-white">Kemitraan</a></li>
                         <li class="mb-2"><a href="#testimoni" class="hover:text-white">Testimoni</a></li>
                     </ul>
@@ -595,206 +572,207 @@
         </div>
     </footer>
 
+    <!-- Import Header Script (Menggunakan nama file baru) -->
+    <script src="header-import.js"></script>
+    
     <script>
-        // Mobile Menu Toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('open');
-        });
-
-        // Testimonial Slider
-        const testimonials = [
-            {
-                quote: "Pelayanan di Emhacare sangat ramah dan profesional. Saya merasa sangat terbantu dengan terapi akupunktur untuk masalah nyeri punggung saya. Sangat direkomendasikan!",
-                name: "Anisa Putri",
-                location: "Surakarta",
-                image: "https://placehold.co/100x100/a0aec0/ffffff?text=AP"
-            },
-            {
-                quote: "Susu Gomilk benar-benar membantu meningkatkan daya tahan tubuh anak saya. Rasanya enak dan anak saya suka. Pengiriman juga cepat dan aman.",
-                name: "Budi Santoso",
-                location: "Sragen",
-                image: "https://placehold.co/100x100/a0aec0/ffffff?text=BS"
-            },
-            {
-                quote: "Dokter di Emhacare sangat sabar dan penjelasannya mudah dimengerti. Saya merasa nyaman berkonsultasi di sini. Tempatnya juga bersih dan nyaman.",
-                name: "Citra Lestari",
-                location: "Karanganyar",
-                image: "https://placehold.co/100x100/a0aec0/ffffff?text=CL"
-            }
-        ];
-
-        let currentTestimonialIndex = 0;
-        const testimonialContainer = document.getElementById('testimonial-container');
-        const prevTestimonialButton = document.getElementById('prev-testimonial');
-        const nextTestimonialButton = document.getElementById('next-testimonial');
-
-        function displayTestimonial(index) {
-            const testimonial = testimonials[index];
-            testimonialContainer.innerHTML = `
-                <div class="testimonial-fade-in">
-                    <img src="${testimonial.image}" alt="Foto ${testimonial.name}" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-emhacare-green">
-                    <p class="text-lg italic text-gray-600">"${testimonial.quote}"</p>
-                    <div class="mt-4">
-                        <p class="font-bold text-gray-800 text-xl">${testimonial.name}</p>
-                        <p class="text-gray-500">${testimonial.location}</p>
-                    </div>
-                </div>
-            `;
-        }
-        
-        if(testimonialContainer) {
-            prevTestimonialButton.addEventListener('click', () => {
-                currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
-                displayTestimonial(currentTestimonialIndex);
-            });
-
-            nextTestimonialButton.addEventListener('click', () => {
-                currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
-                displayTestimonial(currentTestimonialIndex);
-            });
+        document.addEventListener('DOMContentLoaded', () => {
             
-            // Auto-cycle testimonials
-            setInterval(() => {
-                nextTestimonialButton.click();
-            }, 6000);
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
 
-            // Initial display
-            displayTestimonial(currentTestimonialIndex);
-        }
-        
-        // General Slider Function
-        function setupSlider(sliderId, prevButtonId, nextButtonId, dotsId, config = {}) {
-            const sliderTrack = document.getElementById(sliderId);
-            if (!sliderTrack) return;
-
-            const prevButton = document.getElementById(prevButtonId);
-            const nextButton = document.getElementById(nextButtonId);
-            const dotsContainer = document.getElementById(dotsId);
-
-            let slides = Array.from(sliderTrack.children);
-            const originalSlideCount = slides.length;
-            if (originalSlideCount <= 1) {
-                if(prevButton) prevButton.style.display = 'none';
-                if(nextButton) nextButton.style.display = 'none';
-                return;
-            };
-
-            let currentIndex = 0; // Logical index: 0 to originalSlideCount - 1
-            let isTransitioning = false;
-            
-            const transitionDuration = config.duration || 700;
-            const autoSlideDelay = config.delay || 10000;
-            const fullTransitionStyle = `transform ${transitionDuration / 1000}s ease-in-out`;
-
-            // 1. Clone first and last slides for seamless loop
-            const firstClone = slides[0].cloneNode(true);
-            const lastClone = slides[originalSlideCount - 1].cloneNode(true);
-            sliderTrack.appendChild(firstClone);
-            sliderTrack.insertBefore(lastClone, slides[0]);
-            
-            // Update slides array after cloning
-            slides = Array.from(sliderTrack.children);
-            
-            // 2. Initial setup
-            sliderTrack.style.transform = `translateX(-100%)`; // Start at the first real slide
-
-            // 3. Create dots
-            if (dotsContainer) {
-                dotsContainer.innerHTML = '';
-                for (let i = 0; i < originalSlideCount; i++) {
-                    const dot = document.createElement('button');
-                    if (dotsId === 'program-slider-dots') {
-                        dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-gray-300', 'hover:bg-gray-400', 'transition');
-                    } else {
-                        dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-white/50', 'hover:bg-white', 'transition');
-                    }
-                    dot.addEventListener('click', () => {
-                        if (isTransitioning) return;
-                        currentIndex = i;
-                        moveToSlide();
-                        resetAutoSlide();
-                    });
-                    dotsContainer.appendChild(dot);
+            // Script Slider & Testimoni
+            // Testimonial Slider
+            const testimonials = [
+                {
+                    quote: "Pelayanan di Emhacare sangat ramah dan profesional. Saya merasa sangat terbantu dengan terapi akupunktur untuk masalah nyeri punggung saya. Sangat direkomendasikan!",
+                    name: "Anisa Putri",
+                    location: "Surakarta",
+                    image: "https://placehold.co/100x100/a0aec0/ffffff?text=AP"
+                },
+                {
+                    quote: "Susu Gomilk benar-benar membantu meningkatkan daya tahan tubuh anak saya. Rasanya enak dan anak saya suka. Pengiriman juga cepat dan aman.",
+                    name: "Budi Santoso",
+                    location: "Sragen",
+                    image: "https://placehold.co/100x100/a0aec0/ffffff?text=BS"
+                },
+                {
+                    quote: "Dokter di Emhacare sangat sabar dan penjelasannya mudah dimengerti. Saya merasa nyaman berkonsultasi di sini. Tempatnya juga bersih dan nyaman.",
+                    name: "Citra Lestari",
+                    location: "Karanganyar",
+                    image: "https://placehold.co/100x100/a0aec0/ffffff?text=CL"
                 }
-            }
-            const dots = dotsContainer ? Array.from(dotsContainer.children) : [];
+            ];
 
-            const updateDots = () => {
-                if (!dotsContainer) return;
-                dots.forEach((dot, i) => {
-                    const isActive = (i === currentIndex);
-                    if (dotsId === 'program-slider-dots') {
-                        dot.classList.toggle('bg-emhacare-blue', isActive);
-                        dot.classList.toggle('bg-gray-300', !isActive);
-                    } else {
-                        dot.classList.toggle('bg-white', isActive);
-                        dot.classList.toggle('bg-white/50', !isActive);
+            let currentTestimonialIndex = 0;
+            const testimonialContainer = document.getElementById('testimonial-container');
+            const prevTestimonialButton = document.getElementById('prev-testimonial');
+            const nextTestimonialButton = document.getElementById('next-testimonial');
+
+            function displayTestimonial(index) {
+                const testimonial = testimonials[index];
+                testimonialContainer.innerHTML = `
+                    <div class="testimonial-fade-in">
+                        <img src="${testimonial.image}" alt="Foto ${testimonial.name}" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-emhacare-green">
+                        <p class="text-lg italic text-gray-600">"${testimonial.quote}"</p>
+                        <div class="mt-4">
+                            <p class="font-bold text-gray-800 text-xl">${testimonial.name}</p>
+                            <p class="text-gray-500">${testimonial.location}</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            if(testimonialContainer) {
+                // Initial display
+                displayTestimonial(currentTestimonialIndex);
+                
+                prevTestimonialButton.addEventListener('click', () => {
+                    currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
+                    displayTestimonial(currentTestimonialIndex);
+                });
+
+                nextTestimonialButton.addEventListener('click', () => {
+                    currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+                    displayTestimonial(currentTestimonialIndex);
+                });
+                
+                // Auto-cycle testimonials
+                setInterval(() => {
+                    nextTestimonialButton.click();
+                }, 6000);
+            }
+            
+            // General Slider Function
+            function setupSlider(sliderId, prevButtonId, nextButtonId, dotsId, config = {}) {
+                const sliderTrack = document.getElementById(sliderId);
+                if (!sliderTrack) return;
+
+                const prevButton = document.getElementById(prevButtonId);
+                const nextButton = document.getElementById(nextButtonId);
+                const dotsContainer = document.getElementById(dotsId);
+
+                let slides = Array.from(sliderTrack.children);
+                const originalSlideCount = slides.length;
+                if (originalSlideCount <= 1) {
+                    if(prevButton) prevButton.style.display = 'none';
+                    if(nextButton) nextButton.style.display = 'none';
+                    return;
+                };
+
+                let currentIndex = 0; // Logical index: 0 to originalSlideCount - 1
+                let isTransitioning = false;
+                
+                const transitionDuration = config.duration || 700;
+                const autoSlideDelay = config.delay || 10000;
+                const fullTransitionStyle = `transform ${transitionDuration / 1000}s ease-in-out`;
+
+                // 1. Clone first and last slides for seamless loop
+                const firstClone = slides[0].cloneNode(true);
+                const lastClone = slides[originalSlideCount - 1].cloneNode(true);
+                sliderTrack.appendChild(firstClone);
+                sliderTrack.insertBefore(lastClone, slides[0]);
+                
+                // Update slides array after cloning
+                slides = Array.from(sliderTrack.children);
+                
+                // 2. Initial setup
+                sliderTrack.style.transform = `translateX(-100%)`; // Start at the first real slide
+
+                // 3. Create dots
+                if (dotsContainer) {
+                    dotsContainer.innerHTML = '';
+                    for (let i = 0; i < originalSlideCount; i++) {
+                        const dot = document.createElement('button');
+                        if (dotsId === 'program-slider-dots') {
+                            dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-gray-300', 'hover:bg-gray-400', 'transition');
+                        } else {
+                            dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-white/50', 'hover:bg-white', 'transition');
+                        }
+                        dot.addEventListener('click', () => {
+                            if (isTransitioning) return;
+                            currentIndex = i;
+                            moveToSlide();
+                            resetAutoSlide();
+                        });
+                        dotsContainer.appendChild(dot);
+                    }
+                }
+                const dots = dotsContainer ? Array.from(dotsContainer.children) : [];
+
+                const updateDots = () => {
+                    if (!dotsContainer) return;
+                    dots.forEach((dot, i) => {
+                        const isActive = (i === currentIndex);
+                        if (dotsId === 'program-slider-dots') {
+                            dot.classList.toggle('bg-emhacare-blue', isActive);
+                            dot.classList.toggle('bg-gray-300', !isActive);
+                        } else {
+                            dot.classList.toggle('bg-white', isActive);
+                            dot.classList.toggle('bg-white/50', !isActive);
+                        }
+                    });
+                };
+                
+                const moveToSlide = () => {
+                    sliderTrack.style.transition = fullTransitionStyle;
+                    sliderTrack.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`;
+                    updateDots();
+                };
+
+                sliderTrack.addEventListener('transitionend', () => {
+                    isTransitioning = false;
+                    if (currentIndex >= originalSlideCount) {
+                        sliderTrack.style.transition = 'none';
+                        currentIndex = 0;
+                        sliderTrack.style.transform = `translateX(-100%)`;
+                    }
+                    if (currentIndex < 0) {
+                        sliderTrack.style.transition = 'none';
+                        currentIndex = originalSlideCount - 1;
+                        sliderTrack.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`;
                     }
                 });
-            };
-            
-            const moveToSlide = () => {
-                sliderTrack.style.transition = fullTransitionStyle;
-                sliderTrack.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`;
+
+                const next = () => {
+                    if (isTransitioning) return;
+                    isTransitioning = true;
+                    currentIndex++;
+                    moveToSlide();
+                };
+
+                const prev = () => {
+                    if (isTransitioning) return;
+                    isTransitioning = true;
+                    currentIndex--;
+                    moveToSlide();
+                };
+
+                let autoSlideInterval = setInterval(next, autoSlideDelay);
+                const resetAutoSlide = () => {
+                    clearInterval(autoSlideInterval);
+                    autoSlideInterval = setInterval(next, autoSlideDelay);
+                };
+
+                nextButton.addEventListener('click', () => {
+                    next();
+                    resetAutoSlide();
+                });
+
+                prevButton.addEventListener('click', () => {
+                    prev();
+                    resetAutoSlide();
+                });
+
+                // Initial call
                 updateDots();
-            };
+            }
 
-            sliderTrack.addEventListener('transitionend', () => {
-                isTransitioning = false;
-                if (currentIndex >= originalSlideCount) {
-                    sliderTrack.style.transition = 'none';
-                    currentIndex = 0;
-                    sliderTrack.style.transform = `translateX(-100%)`;
-                }
-                if (currentIndex < 0) {
-                    sliderTrack.style.transition = 'none';
-                    currentIndex = originalSlideCount - 1;
-                    sliderTrack.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`;
-                }
-            });
-
-            const next = () => {
-                if (isTransitioning) return;
-                isTransitioning = true;
-                currentIndex++;
-                moveToSlide();
-            };
-
-            const prev = () => {
-                if (isTransitioning) return;
-                isTransitioning = true;
-                currentIndex--;
-                moveToSlide();
-            };
-
-            let autoSlideInterval = setInterval(next, autoSlideDelay);
-            const resetAutoSlide = () => {
-                clearInterval(autoSlideInterval);
-                autoSlideInterval = setInterval(next, autoSlideDelay);
-            };
-
-            nextButton.addEventListener('click', () => {
-                next();
-                resetAutoSlide();
-            });
-
-            prevButton.addEventListener('click', () => {
-                prev();
-                resetAutoSlide();
-            });
-
-            // Initial call
-            updateDots();
-        }
-
-        // Initialize Sliders
-        setupSlider('hero-slider-track', 'prev-hero-slide', 'next-hero-slide', 'hero-slider-dots', { duration: 700 });
-        setupSlider('slider-track', 'prev-slide', 'next-slide', 'slider-dots', { duration: 500 });
-        setupSlider('program-slider-track', 'prev-program-slide', 'next-program-slide', 'program-slider-dots', { duration: 500 });
-
-
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
+            // Initialize Sliders
+            setupSlider('hero-slider-track', 'prev-hero-slide', 'next-hero-slide', 'hero-slider-dots', { duration: 700 });
+            setupSlider('slider-track', 'prev-slide', 'next-slide', 'slider-dots', { duration: 500 });
+            setupSlider('program-slider-track', 'prev-program-slide', 'next-program-slide', 'program-slider-dots', { duration: 500 });
+        });
     </script>
 
 </body>

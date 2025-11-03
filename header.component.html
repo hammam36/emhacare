@@ -1,0 +1,53 @@
+    <!-- KONTEN INI ADALAH KOMPONEN NAVBAR YANG AKAN TERSUNTIK KE HALAMAN LAIN -->
+    <header class="bg-white shadow-md sticky top-0 z-50 w-full">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-emhacare-blue">
+                <div>
+                    <!-- Hapus tag <style> karena sudah ada di head halaman utama -->
+                    <img src="logo.png" onerror="this.onerror=null;this.src='https://placehold.co/100x32/00AEEF/FFFFFF?text=emhacare';" alt="logo emhacare" class="h-8 inline-block mr-2">
+                </div>
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <!-- Tautan untuk Desktop -->
+                <a href="index.html#beranda" class="text-gray-600 hover:text-emhacare-blue">Beranda</a>
+                <a href="index.html#layanan" class="text-gray-600 hover:text-emhacare-blue">Layanan</a>
+                <a href="toko.html" class="text-gray-600 hover:text-emhacare-blue text-emhacare-green">Toko</a>
+                <a href="index.html#artikel" class="text-gray-600 hover:text-emhacare-blue">Artikel</a>
+                <a href="index.html#galeri" class="text-gray-600 hover:text-emhacare-blue">Galeri</a>
+                <a href="index.html#peluang-usaha" class="text-gray-600 hover:text-emhacare-blue">Kemitraan</a>
+            </div>
+            <a href="https://wa.me/6281328213737" target="_blank" class="hidden md:flex items-center bg-emhacare-blue text-white px-5 py-2 rounded-full hover:bg-emhacare-blue-dark transition duration-300"><i class="fab fa-whatsapp mr-2"></i>Buat Janji</a>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden px-6 pb-4">
+            <!-- Tautan untuk Mobile -->
+            <a href="index.html#beranda" class="block py-2 text-gray-600 hover:text-emhacare-blue">Beranda</a>
+            <a href="index.html#layanan" class="block py-2 text-gray-600 hover:text-emhacare-blue">Layanan</a>
+            <a href="toko.html" class="block py-2 text-gray-600 hover:text-emhacare-blue text-emhacare-green">Toko</a>
+            <a href="index.html#artikel" class="block py-2 text-gray-600 hover:text-emhacare-blue">Artikel</a>
+            <a href="index.html#galeri" class="block py-2 text-gray-600 hover:text-emhacare-blue">Galeri</a>
+            <a href="index.html#peluang-usaha" class="block py-2 text-gray-600 hover:text-emhacare-blue">Kemitraan</a>
+            <a href="https://wa.me/6281328213737" target="_blank" class="flex items-center justify-center bg-emhacare-blue text-white text-center mt-2 px-5 py-2 rounded-full hover:bg-emhacare-blue-dark transition duration-300"><i class="fab fa-whatsapp mr-2"></i>Buat Janji</a>
+        </div>
+    </header>
+
+    <!-- Hapus CSS di sini karena sudah ada di host pages -->
+    
+    <script>
+        // Membuat fungsi setupMobileMenu tersedia di window agar bisa dipanggil oleh header-import.js
+        window.setupMobileMenu = function() {
+            const button = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            
+            if (button && menu) {
+                button.addEventListener('click', () => {
+                    menu.classList.toggle('open');
+                });
+            }
+        };
+        // Hapus: document.addEventListener('DOMContentLoaded', () => { window.setupMobileMenu(); });
+        // karena ini akan dijalankan oleh header-import.js setelah injeksi.
+    </script>
