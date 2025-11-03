@@ -24,6 +24,12 @@
                         'emhacare-green-light': '#f0f9e8',
                         'emhacare-green-dark': '#79ab39',
 
+                        // Warna tombol produk
+                        'detail-green': '#A1C634',
+                        'detail-green-hover': '#8db02d',
+                        'chat-blue': '#14A2E0',
+                        'chat-blue-hover': '#1189c4',
+
                         // Warna toko lama Anda (dipertahankan untuk konten toko agar tidak berubah)
                         'emha-blue': '#00a9e2',
                         'emha-green': '#8dc63f',
@@ -157,19 +163,25 @@
                         src="https://placehold.co/600x400/a7f3d0/333333?text=Susu+Gomilk" alt="Susu Gomilk">
                     <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-gray-800 mb-2">Susu Gomilk</h2>
-                        <p class="text-gray-600 mb-4 flex-grow">Nutrisi alami dari susu kambing untuk menjaga daya tahan
+                        <p class="text-gray-600 mb-3 flex-grow text-sm">Nutrisi alami dari susu kambing untuk menjaga daya tahan
                             tubuh dan kesehatan pencernaan.</p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <span class="text-xl font-bold text-emhacare-blue">Rp 30.000</span>
-                            <button
-                                class="flex items-center gap-2 bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-cart3" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.49.402H3.21l.938 3.961A.5.5 0 0 1 4.69 13h7.61a.5.5 0 0 1 0 1H4.69a1.5 1.5 0 0 1-1.48-1.876L1.61 3.636A.5.5 0 0 1 2.11 3H2.5L2.89 1.5zM3.92 4l.755 3.197h6.47l.72-3.6zM6 14.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
-                                </svg>
-                                Beli
-                            </button>
+                        <div class="mt-auto">
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-red-500">Rp 30.000</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <button
+                                    class="w-full flex items-center justify-center gap-2 bg-detail-green text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-detail-green-hover transition-colors">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Detail
+                                </button>
+                                <a href="https://wa.me/6281328213737?text=Halo,%20saya%20ingin%20bertanya%20tentang%20Susu%20Gomilk"
+                                    target="_blank"
+                                    class="w-full flex items-center justify-center gap-2 bg-chat-blue text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-chat-blue-hover transition-colors">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Chat Now
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -181,19 +193,25 @@
                         src="https://placehold.co/600x400/bae6fd/333333?text=Buku+Tadabbur" alt="Buku Tadabbur Qur'an">
                     <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-gray-800 mb-2">Buku Tadabbur Qur'an</h2>
-                        <p class="text-gray-600 mb-4 flex-grow">Buku kreatif untuk membantu anak-anak dan keluarga lebih
+                        <p class="text-gray-600 mb-3 flex-grow text-sm">Buku kreatif untuk membantu anak-anak dan keluarga lebih
                             dekat dengan Al-Qur'an.</p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <span class="text-xl font-bold text-emhacare-blue">Rp 99.000</span>
-                            <button
-                                class="flex items-center gap-2 bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-cart3" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.49.402H3.21l.938 3.961A.5.5 0 0 1 4.69 13h7.61a.5.5 0 0 1 0 1H4.69a1.5 1.5 0 0 1-1.48-1.876L1.61 3.636A.5.5 0 0 1 2.11 3H2.5L2.89 1.5zM3.92 4l.755 3.197h6.47l.72-3.6zM6 14.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
-                                </svg>
-                                Beli
-                            </button>
+                        <div class="mt-auto">
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-red-500">Rp 99.000</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <button
+                                    class="w-full flex items-center justify-center gap-2 bg-detail-green text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-detail-green-hover transition-colors">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Detail
+                                </button>
+                                <a href="https://wa.me/6281328213737?text=Halo,%20saya%20ingin%20bertanya%20tentang%20Buku%20Tadabbur%20Qur'an"
+                                    target="_blank"
+                                    class="w-full flex items-center justify-center gap-2 bg-chat-blue text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-chat-blue-hover transition-colors">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Chat Now
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -205,19 +223,25 @@
                         src="https://placehold.co/600x400/fecaca/333333?text=Paracetamol" alt="Paracetamol">
                     <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-gray-800 mb-2">Paracetamol 500mg</h2>
-                        <p class="text-gray-600 mb-4 flex-grow">Obat untuk meredakan demam dan nyeri ringan hingga
+                        <p class="text-gray-600 mb-3 flex-grow text-sm">Obat untuk meredakan demam dan nyeri ringan hingga
                             sedang. Selalu baca aturan pakai.</p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <span class="text-xl font-bold text-emhacare-blue">Rp 8.000</span>
-                            <button
-                                class="flex items-center gap-2 bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-cart3" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.49.402H3.21l.938 3.961A.5.5 0 0 1 4.69 13h7.61a.5.5 0 0 1 0 1H4.69a1.5 1.5 0 0 1-1.48-1.876L1.61 3.636A.5.5 0 0 1 2.11 3H2.5L2.89 1.5zM3.92 4l.755 3.197h6.47l.72-3.6zM6 14.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
-                                </svg>
-                                Beli
-                            </button>
+                        <div class="mt-auto">
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-red-500">Rp 8.000</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <button
+                                    class="w-full flex items-center justify-center gap-2 bg-detail-green text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-detail-green-hover transition-colors">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Detail
+                                </button>
+                                <a href="https://wa.me/6281328213737?text=Halo,%20saya%20ingin%20bertanya%20tentang%20Paracetamol%20500mg"
+                                    target="_blank"
+                                    class="w-full flex items-center justify-center gap-2 bg-chat-blue text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-chat-blue-hover transition-colors">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Chat Now
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -229,19 +253,25 @@
                         src="https://placehold.co/600x400/fde68a/333333?text=Madu+Propolis" alt="Madu Propolis">
                     <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-gray-800 mb-2">Madu Propolis</h2>
-                        <p class="text-gray-600 mb-4 flex-grow">Kombinasi madu murni dan propolis untuk meningkatkan
+                        <p class="text-gray-600 mb-3 flex-grow text-sm">Kombinasi madu murni dan propolis untuk meningkatkan
                             imunitas dan stamina tubuh.</p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <span class="text-xl font-bold text-emhacare-blue">Rp 75.000</span>
-                            <button
-                                class="flex items-center gap-2 bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-cart3" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.49.402H3.21l.938 3.961A.5.5 0 0 1 4.69 13h7.61a.5.5 0 0 1 0 1H4.69a1.5 1.5 0 0 1-1.48-1.876L1.61 3.636A.5.5 0 0 1 2.11 3H2.5L2.89 1.5zM3.92 4l.755 3.197h6.47l.72-3.6zM6 14.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
-                                </svg>
-                                Beli
-                            </button>
+                        <div class="mt-auto">
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-red-500">Rp 75.000</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <button
+                                    class="w-full flex items-center justify-center gap-2 bg-detail-green text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-detail-green-hover transition-colors">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Detail
+                                </button>
+                                <a href="https://wa.me/6281328213737?text=Halo,%20saya%20ingin%20bertanya%20tentang%20Madu%20Propolis"
+                                    target="_blank"
+                                    class="w-full flex items-center justify-center gap-2 bg-chat-blue text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-chat-blue-hover transition-colors">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Chat Now
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -253,19 +283,25 @@
                         src="https://placehold.co/600x400/d1fae5/333333?text=Minyak+Zaitun" alt="Minyak Zaitun">
                     <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-gray-800 mb-2">Minyak Zaitun</h2>
-                        <p class="text-gray-600 mb-4 flex-grow">Minyak zaitun extra virgin untuk kesehatan jantung dan
+                        <p class="text-gray-600 mb-3 flex-grow text-sm">Minyak zaitun extra virgin untuk kesehatan jantung dan
                             kulit.</p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <span class="text-xl font-bold text-emhacare-blue">Rp 55.000</span>
-                            <button
-                                class="flex items-center gap-2 bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-cart3" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.49.402H3.21l.938 3.961A.5.5 0 0 1 4.69 13h7.61a.5.5 0 0 1 0 1H4.69a1.5 1.5 0 0 1-1.48-1.876L1.61 3.636A.5.5 0 0 1 2.11 3H2.5L2.89 1.5zM3.92 4l.755 3.197h6.47l.72-3.6zM6 14.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
-                                </svg>
-                                Beli
-                            </button>
+                        <div class="mt-auto">
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-red-500">Rp 55.000</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <button
+                                    class="w-full flex items-center justify-center gap-2 bg-detail-green text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-detail-green-hover transition-colors">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Detail
+                                </button>
+                                <a href="https://wa.me/6281328213737?text=Halo,%20saya%20ingin%20bertanya%20tentang%20Minyak%20Zaitun"
+                                    target="_blank"
+                                    class="w-full flex items-center justify-center gap-2 bg-chat-blue text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-chat-blue-hover transition-colors">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Chat Now
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -277,19 +313,25 @@
                         src="https://placehold.co/600x400/fee2e2/333333?text=Amoxicillin" alt="Amoxicillin">
                     <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-gray-800 mb-2">Amoxicillin 500mg</h2>
-                        <p class="text-gray-600 mb-4 flex-grow">Antibiotik untuk infeksi bakteri. Membutuhkan resep
+                        <p class="text-gray-600 mb-3 flex-grow text-sm">Antibiotik untuk infeksi bakteri. Membutuhkan resep
                             dokter.</p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <span class="text-xl font-bold text-emhacare-blue">Rp 15.000</span>
-                            <button
-                                class="flex items-center gap-2 bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-cart3" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.49.402H3.21l.938 3.961A.5.5 0 0 1 4.69 13h7.61a.5.5 0 0 1 0 1H4.69a1.5 1.5 0 0 1-1.48-1.876L1.61 3.636A.5.5 0 0 1 2.11 3H2.5L2.89 1.5zM3.92 4l.755 3.197h6.47l.72-3.6zM6 14.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
-                                </svg>
-                                Beli
-                            </button>
+                        <div class="mt-auto">
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-red-500">Rp 15.000</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <button
+                                    class="w-full flex items-center justify-center gap-2 bg-detail-green text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-detail-green-hover transition-colors">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Detail
+                                </button>
+                                <a href="https://wa.me/6281328213737?text=Halo,%20saya%20ingin%20bertanya%20tentang%20Amoxicillin%20500mg"
+                                    target="_blank"
+                                    class="w-full flex items-center justify-center gap-2 bg-chat-blue text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-chat-blue-hover transition-colors">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Chat Now
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -301,19 +343,25 @@
                         src="https://placehold.co/600x400/cffafe/333333?text=Buku+Fiqih" alt="Buku Fiqih Wanita">
                     <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-gray-800 mb-2">Buku Fiqih Wanita</h2>
-                        <p class="text-gray-600 mb-4 flex-grow">Panduan lengkap ibadah dan muamalah khusus untuk
+                        <p class="text-gray-600 mb-3 flex-grow text-sm">Panduan lengkap ibadah dan muamalah khusus untuk
                             muslimah.</p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <span class="text-xl font-bold text-emhacare-blue">Rp 85.000</span>
-                            <button
-                                class="flex items-center gap-2 bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-cart3" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.49.402H3.21l.938 3.961A.5.5 0 0 1 4.69 13h7.61a.5.5 0 0 1 0 1H4.69a1.5 1.5 0 0 1-1.48-1.876L1.61 3.636A.5.5 0 0 1 2.11 3H2.5L2.89 1.5zM3.92 4l.755 3.197h6.47l.72-3.6zM6 14.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
-                                </svg>
-                                Beli
-                            </button>
+                        <div class="mt-auto">
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-red-500">Rp 85.000</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <button
+                                    class="w-full flex items-center justify-center gap-2 bg-detail-green text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-detail-green-hover transition-colors">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Detail
+                                </button>
+                                <a href="https://wa.me/6281328213737?text=Halo,%20saya%20ingin%20bertanya%20tentang%20Buku%20Fiqih%20Wanita"
+                                    target="_blank"
+                                    class="w-full flex items-center justify-center gap-2 bg-chat-blue text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-chat-blue-hover transition-colors">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Chat Now
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -325,19 +373,25 @@
                         src="https://placehold.co/600x400/fef3c7/333333?text=Sari+Kurma" alt="Sari Kurma">
                     <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-gray-800 mb-2">Sari Kurma</h2>
-                        <p class="text-gray-600 mb-4 flex-grow">Suplemen penambah energi dan baik untuk penderita demam
+                        <p class="text-gray-600 mb-3 flex-grow text-sm">Suplemen penambah energi dan baik untuk penderita demam
                             berdarah.</p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <span class="text-xl font-bold text-emhacare-blue">Rp 25.000</span>
-                            <button
-                                class="flex items-center gap-2 bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-cart3" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.49.402H3.21l.938 3.961A.5.5 0 0 1 4.69 13h7.61a.5.5 0 0 1 0 1H4.69a1.5 1.5 0 0 1-1.48-1.876L1.61 3.636A.5.5 0 0 1 2.11 3H2.5L2.89 1.5zM3.92 4l.755 3.197h6.47l.72-3.6zM6 14.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
-                                </svg>
-                                Beli
-                            </button>
+                        <div class="mt-auto">
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-red-500">Rp 25.000</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <button
+                                    class="w-full flex items-center justify-center gap-2 bg-detail-green text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-detail-green-hover transition-colors">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Detail
+                                </button>
+                                <a href="https://wa.me/6281328213737?text=Halo,%20saya%20ingin%20bertanya%20tentang%20Sari%20Kurma"
+                                    target="_blank"
+                                    class="w-full flex items-center justify-center gap-2 bg-chat-blue text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-chat-blue-hover transition-colors">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Chat Now
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -349,19 +403,25 @@
                         alt="Bodrex">
                     <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-gray-800 mb-2">Bodrex</h2>
-                        <p class="text-gray-600 mb-4 flex-grow">Meredakan sakit kepala, sakit gigi, dan menurunkan
+                        <p class="text-gray-600 mb-3 flex-grow text-sm">Meredakan sakit kepala, sakit gigi, dan menurunkan
                             demam.</p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <span class="text-xl font-bold text-emhacare-blue">Rp 5.000</span>
-                            <button
-                                class="flex items-center gap-2 bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-cart3" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.49.402H3.21l.938 3.961A.5.5 0 0 1 4.69 13h7.61a.5.5 0 0 1 0 1H4.69a1.5 1.5 0 0 1-1.48-1.876L1.61 3.636A.5.5 0 0 1 2.11 3H2.5L2.89 1.5zM3.92 4l.755 3.197h6.47l.72-3.6zM6 14.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
-                                </svg>
-                                Beli
-                            </button>
+                        <div class="mt-auto">
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-red-500">Rp 5.000</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <button
+                                    class="w-full flex items-center justify-center gap-2 bg-detail-green text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-detail-green-hover transition-colors">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Detail
+                                </button>
+                                <a href="https://wa.me/6281328213737?text=Halo,%20saya%20ingin%20bertanya%20tentang%20Bodrex"
+                                    target="_blank"
+                                    class="w-full flex items-center justify-center gap-2 bg-chat-blue text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-chat-blue-hover transition-colors">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Chat Now
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -374,19 +434,25 @@
                         alt="Buku Parenting Nabawi">
                     <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-gray-800 mb-2">Buku Parenting Nabawi</h2>
-                        <p class="text-gray-600 mb-4 flex-grow">Seni mendidik anak sesuai dengan tuntunan Rasulullah
+                        <p class="text-gray-600 mb-3 flex-grow text-sm">Seni mendidik anak sesuai dengan tuntunan Rasulullah
                             SAW.</p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <span class="text-xl font-bold text-emhacare-blue">Rp 120.000</span>
-                            <button
-                                class="flex items-center gap-2 bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-cart3" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.49.402H3.21l.938 3.961A.5.5 0 0 1 4.69 13h7.61a.5.5 0 0 1 0 1H4.69a1.5 1.5 0 0 1-1.48-1.876L1.61 3.636A.5.5 0 0 1 2.11 3H2.5L2.89 1.5zM3.92 4l.755 3.197h6.47l.72-3.6zM6 14.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
-                                </svg>
-                                Beli
-                            </button>
+                        <div class="mt-auto">
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-red-500">Rp 120.000</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <button
+                                    class="w-full flex items-center justify-center gap-2 bg-detail-green text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-detail-green-hover transition-colors">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Detail
+                                </button>
+                                <a href="https://wa.me/6281328213737?text=Halo,%20saya%20ingin%20bertanya%20tentang%20Buku%20Parenting%20Nabawi"
+                                    target="_blank"
+                                    class="w-full flex items-center justify-center gap-2 bg-chat-blue text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-chat-blue-hover transition-colors">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Chat Now
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -398,19 +464,25 @@
                         src="https://placehold.co/600x400/e0e7ff/333333?text=Habbatussauda" alt="Habbatussauda">
                     <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-gray-800 mb-2">Habbatussauda Kapsul</h2>
-                        <p class="text-gray-600 mb-4 flex-grow">Dikenal sebagai 'obat segala penyakit', untuk menjaga
+                        <p class="text-gray-600 mb-3 flex-grow text-sm">Dikenal sebagai 'obat segala penyakit', untuk menjaga
                             kesehatan secara umum.</p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <span class="text-xl font-bold text-emhacare-blue">Rp 60.000</span>
-                            <button
-                                class="flex items-center gap-2 bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-cart3" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.49.402H3.21l.938 3.961A.5.5 0 0 1 4.69 13h7.61a.5.5 0 0 1 0 1H4.69a1.5 1.5 0 0 1-1.48-1.876L1.61 3.636A.5.5 0 0 1 2.11 3H2.5L2.89 1.5zM3.92 4l.755 3.197h6.47l.72-3.6zM6 14.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
-                                </svg>
-                                Beli
-                            </button>
+                        <div class="mt-auto">
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-red-500">Rp 60.000</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <button
+                                    class="w-full flex items-center justify-center gap-2 bg-detail-green text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-detail-green-hover transition-colors">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Detail
+                                </button>
+                                <a href="https://wa.me/6281328213737?text=Halo,%20saya%20ingin%20bertanya%20tentang%20Habbatussauda%20Kapsul"
+                                    target="_blank"
+                                    class="w-full flex items-center justify-center gap-2 bg-chat-blue text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-chat-blue-hover transition-colors">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Chat Now
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -423,19 +495,25 @@
                         alt="Buku Sirah Nabawiyah">
                     <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-gray-800 mb-2">Sirah Nabawiyah</h2>
-                        <p class="text-gray-600 mb-4 flex-grow">Kisah perjalanan hidup dan perjuangan Nabi Muhammad SAW.
+                        <p class="text-gray-600 mb-3 flex-grow text-sm">Kisah perjalanan hidup dan perjuangan Nabi Muhammad SAW.
                         </p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <span class="text-xl font-bold text-emhacare-blue">Rp 150.000</span>
-                            <button
-                                class="flex items-center gap-2 bg-emhacare-green-light text-emhacare-green-dark font-semibold px-4 py-2 rounded-full hover:bg-emhacare-green hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-cart3" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.49.402H3.21l.938 3.961A.5.5 0 0 1 4.69 13h7.61a.5.5 0 0 1 0 1H4.69a1.5 1.5 0 0 1-1.48-1.876L1.61 3.636A.5.5 0 0 1 2.11 3H2.5L2.89 1.5zM3.92 4l.755 3.197h6.47l.72-3.6zM6 14.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
-                                </svg>
-                                Beli
-                            </button>
+                        <div class="mt-auto">
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-red-500">Rp 150.000</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <button
+                                    class="w-full flex items-center justify-center gap-2 bg-detail-green text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-detail-green-hover transition-colors">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Detail
+                                </button>
+                                <a href="https://wa.me/6281328213737?text=Halo,%20saya%20ingin%20bertanya%20tentang%20Sirah%20Nabawiyah"
+                                    target="_blank"
+                                    class="w-full flex items-center justify-center gap-2 bg-chat-blue text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-chat-blue-hover transition-colors">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Chat Now
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
