@@ -84,6 +84,29 @@
             color: white;
             font-weight: 600;
         }
+
+        /* Floating WhatsApp Button */
+        .floating-wa-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            background: linear-gradient(135deg, #A1C634 0%, #8db02d 100%);
+            box-shadow: 0 8px 24px rgba(161, 198, 52, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .floating-wa-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(161, 198, 52, 0.5);
+        }
+
+        @media (max-width: 640px) {
+            .floating-wa-btn {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
     </style>
 </head>
 
@@ -91,26 +114,6 @@
 
     <!-- Placeholder Header/Navbar Utama (AKAN DIISI OLEH JAVASCRIPT) -->
     <div id="main-header-placeholder"></div>
-
-    <!-- Header Tambahan Toko (Diubah top-[72px] untuk menempel pas di bawah navbar utama) -->
-    <section class="bg-gray-100 shadow-sm border-t border-gray-200 sticky top-[72px] z-40">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <!-- Breadcrumb atau Tautan Kembali -->
-            <a href="index.html"
-                class="flex items-center text-sm text-gray-500 hover:text-emhacare-blue transition-colors">
-                <i class="fas fa-arrow-left mr-2"></i>
-                Kembali ke Beranda
-            </a>
-
-            <!-- Tanya Produk Button -->
-            <a href="https://wa.me/6281328213737?text=Saya%20ingin%20bertanya%20mengenai%20produk%20Emhacare"
-                target="_blank"
-                class="flex items-center gap-2 bg-emhacare-green text-white font-semibold px-4 py-1.5 rounded-full hover:bg-emhacare-green-dark transition-colors duration-200 shadow">
-                <i class="fab fa-whatsapp"></i>
-                <span class="text-sm">Tanya Produk</span>
-            </a>
-        </div>
-    </section>
 
     <!-- Main Content -->
     <main class="container mx-auto px-6 py-8 md:py-12">
@@ -527,6 +530,14 @@
 
         </section>
     </main>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281328213737?text=Saya%20ingin%20bertanya%20mengenai%20produk%20Emhacare" 
+        target="_blank" 
+        class="floating-wa-btn flex items-center gap-3 text-white font-semibold px-6 py-4 rounded-full">
+        <i class="fab fa-whatsapp text-2xl"></i>
+        <span class="hidden sm:inline text-sm">Tanya Produk</span>
+    </a>
 
     <!-- Import Header Script (Menggunakan nama file baru) -->
     <script src="header-import.js"></script>
